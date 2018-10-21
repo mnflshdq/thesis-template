@@ -102,6 +102,10 @@
 % change picture numbering
 \renewcommand\thefigure{\arabic{chapter}.\arabic{equation}}
 
+%>>>>> table <<<<<%
+% change table numbering
+\renewcommand\thetable{\arabic{chapter}.\arabic{table}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Spacing                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

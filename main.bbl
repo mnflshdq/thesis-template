@@ -1,0 +1,55 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global}
+    \entry{book:classical}{book}{}
+      \name{author}{2}{}{%
+        {{hash=9f7d8e7ce768720b5cec557dcb6feebd}{%
+           family={Thornton},
+           familyi={T\bibinitperiod},
+           given={Stephen\bibnamedelima T.},
+           giveni={S\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=390bdd547dd99910eaf310224801a34f}{%
+           family={Marion},
+           familyi={M\bibinitperiod},
+           given={Jerry\bibnamedelima B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Thomson}%
+      }
+      \strng{namehash}{18f3661f1141e49f660196be7cfa3fa2}
+      \strng{fullhash}{18f3661f1141e49f660196be7cfa3fa2}
+      \strng{bibnamehash}{18f3661f1141e49f660196be7cfa3fa2}
+      \strng{authorbibnamehash}{18f3661f1141e49f660196be7cfa3fa2}
+      \strng{authornamehash}{18f3661f1141e49f660196be7cfa3fa2}
+      \strng{authorfullhash}{18f3661f1141e49f660196be7cfa3fa2}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{5th ed}
+      \field{title}{Classical Dynamics of Particles and Systems}
+      \field{year}{2004}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
