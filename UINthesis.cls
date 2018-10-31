@@ -36,18 +36,13 @@
 \usepackage{booktabs}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% => Title Related            %
+% => Title                    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{titlesec}
-
-% redefine caption sep
-\usepackage[labelfont=bf, labelsep=period]{caption}
 
 % >>>>> chapter <<<<< %
 % change chapter to BAB
 \renewcommand{\chaptername}{BAB}
-% change arabic to roman number
-\renewcommand{\thechapter}{\Roman{chapter}}
 % redefine chapter title
 \titleformat{\chapter}[display]{\centering\large\bfseries}{\normalfont\bfseries\chaptertitlename{} \thechapter}{0pt}{}[]
 
@@ -85,16 +80,25 @@
     }
 
 % >>>>> section <<<<< %
-% change section numbering
-\renewcommand\thesection{\arabic{chapter}.\arabic{section} }
 % redefine section title
 \titleformat{\section}[hang]{\normalfont\bfseries}{\normalfont\bfseries\thesection{} }{0pt}{}[]
 
 % >>>>> subsection <<<<< %
-% change subsection numbering
-\renewcommand\thesubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection} }
 % redefine subsection title
 \titleformat{\subsection}[hang]{\normalfont\bfseries}{\normalfont\bfseries\thesubsection{} }{0pt}{}[]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% => Numbering                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% change chapter numbering from arabic to roman number
+\renewcommand{\thechapter}{\Roman{chapter}}
+
+% change section numbering
+\renewcommand\thesection{\arabic{chapter}.\arabic{section} }
+
+% change subsection numbering
+\renewcommand\thesubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection} }
 
 %>>>>> equation <<<<<%
 % change equation numbering
@@ -103,14 +107,22 @@
 %>>>>> picture <<<<<%
 % change picture numbering
 \renewcommand\thefigure{\arabic{chapter}.\arabic{figure}}
-% redefine figure name
-\renewcommand{\figurename}{\textbf{GAMBAR}}
 
 %>>>>> table <<<<<%
 % change table numbering
 \renewcommand\thetable{\arabic{chapter}.\arabic{table}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% => Caption                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% redefine caption
+\usepackage[labelfont=bf, labelsep=period, justification=centering]{caption}
+
+% redefine figure name
+\renewcommand{\figurename}{\textbf{GAMBAR}}
+
 % redefine table name
-\renewcommand{\tablename}{\textbf{TABEL}}
+\renewcommand{\tablename}{\textbf{tabel}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Spacing                  %
