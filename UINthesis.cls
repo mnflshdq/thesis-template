@@ -100,7 +100,7 @@
 
 %>>>>> picture <<<<<%
 % change picture numbering
-\renewcommand\thefigure{\arabic{chapter}.\arabic{equation}}
+\renewcommand\thefigure{\arabic{chapter}.\arabic{figure}}
 
 %>>>>> table <<<<<%
 % change table numbering
