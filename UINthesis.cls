@@ -31,9 +31,17 @@
 \setmainfont{Times New Roman}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% => Table                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Title Related            %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{titlesec}
+
+% redefine caption sep
+\usepackage[labelfont=bf, labelsep=period]{caption}
 
 % >>>>> chapter <<<<< %
 % change chapter to BAB
@@ -42,8 +50,6 @@
 \renewcommand{\thechapter}{\Roman{chapter}}
 % redefine chapter title
 \titleformat{\chapter}[display]{\centering\large\bfseries}{\normalfont\bfseries\chaptertitlename{} \thechapter}{0pt}{}[]
-% change chapter space to top margin
-\titlespacing*{\chapter}{0pt}{-2\baselineskip}{1em}
 
 % >>>>> table of contents <<<<< %
 \newcommand{\contentspage}{%
@@ -83,16 +89,12 @@
 \renewcommand\thesection{\arabic{chapter}.\arabic{section} }
 % redefine section title
 \titleformat{\section}[hang]{\normalfont\bfseries}{\normalfont\bfseries\thesection{} }{0pt}{}[]
-% change section space
-\titlespacing{\section}{0pt}{12pt}{11pt}
 
 % >>>>> subsection <<<<< %
 % change subsection numbering
 \renewcommand\thesubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection} }
 % redefine subsection title
 \titleformat{\subsection}[hang]{\normalfont\bfseries}{\normalfont\bfseries\thesubsection{} }{0pt}{}[]
-% change subsection space
-\titlespacing{\subsection}{0pt}{11pt}{11pt}
 
 %>>>>> equation <<<<<%
 % change equation numbering
@@ -101,10 +103,14 @@
 %>>>>> picture <<<<<%
 % change picture numbering
 \renewcommand\thefigure{\arabic{chapter}.\arabic{figure}}
+% redefine figure name
+\renewcommand{\figurename}{\textbf{GAMBAR}}
 
 %>>>>> table <<<<<%
 % change table numbering
 \renewcommand\thetable{\arabic{chapter}.\arabic{table}}
+% redefine table name
+\renewcommand{\tablename}{\textbf{TABEL}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Spacing                  %
@@ -119,8 +125,20 @@
 % line spacing
 \renewcommand{\baselinestretch}{1.5}
 
+% change chapter space to top margin
+\titlespacing*{\chapter}{0pt}{-2\baselineskip}{1em}
+
+% change section space
+\titlespacing{\section}{0pt}{12pt}{11pt}
+
+% change subsection space
+\titlespacing{\subsection}{0pt}{11pt}{11pt}
+
 % change paragraph in the midle of document
 \RequirePackage{setspace}
+
+% redefine table spacing
+\renewcommand{\arraystretch}{0.5}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Headers and Footers      %

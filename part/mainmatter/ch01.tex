@@ -23,16 +23,18 @@ Newton's law of universal gravitation states that \textit{each mass particle att
 Table example:
 
 \begin{table}[H]
-\centering
-\begin{tabular}{ccc}
-\hline
-No & Column & Column1 \\ \hline
-1  & A      & B       \\
-2  & C      & D       \\
-3  & E      & F       \\
-4  & G      & H       \\ \hline
-\end{tabular}
-\caption{Table example}\label{table1}
+    \centering
+    \caption{Table example}\label{table1}
+    \begin{tabular}{ccc}
+        \toprule
+        No & Column & Column1 \\
+        \midrule
+        1  & A      & B       \\
+        2  & C      & D       \\
+        3  & E      & F       \\
+        4  & G      & H       \\
+        \bottomrule
+    \end{tabular}
 \end{table}
 
 \lipsum[1]
