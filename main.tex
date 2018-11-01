@@ -5,8 +5,10 @@
 \begin{document}
 
 \frontmatter%
+\thispagestyle{empty}
 \titlepage%
-{\pagestyle{plain}
+
+\pagestyle{plain}
 \originalitypage%
 \validationpage%
 \prefacepage%
@@ -14,9 +16,9 @@
 \contentspage%
 \figurespage%
 \tablespage%
-}
 
 \mainmatter%
+\pagestyle{fancy}
 \input{part/mainmatter/ch01.tex}
 % \input{part/mainmatter/ch02.tex}
 % \input{part/mainmatter/ch03.tex}
@@ -25,6 +27,7 @@
 % \input{part/mainmatter/ch06.tex}
 
 \backmatter%
+\pagestyle{plain}
 \referencepage%
 
 \end{document}

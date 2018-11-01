@@ -31,60 +31,39 @@
 \setmainfont{Times New Roman}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% => Headers and Footers      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{fancyhdr}
+
+% >>>>> pagestyle <<<<< %
+\pagestyle{fancy}
+\fancyhead[L]{}
+\fancyhead[R]{\thepage}
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{15pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Table                    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{booktabs}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% => Title                    %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% => Customize chapters, sections and subsections           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{titlesec}
 
-% >>>>> chapter <<<<< %
 % change chapter to BAB
 \renewcommand{\chaptername}{BAB}
-% redefine chapter title
+
+% redefine chapter
 \titleformat{\chapter}[display]{\centering\large\bfseries}{\normalfont\bfseries\chaptertitlename{} \thechapter}{0pt}{}[]
 
-% >>>>> table of contents <<<<< %
-\newcommand{\contentspage}{%
-    \begin{spacing}{1.0}
-        \renewcommand{\contentsname}{DAFTAR ISI}
-        \tableofcontents
-        \addcontentsline{toc}{chapter}{DAFTAR ISI}
-    \end{spacing}
-}
-
-% >>>>> list of figures <<<<< %
-\newcommand{\figurespage}{%
-    \begin{spacing}{1.0}
-        \renewcommand{\listfigurename}{DAFTAR GAMBAR}
-        \listoffigures
-        \addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
-    \end{spacing}
-}
-
-% >>>>> list of tables <<<<< %
-\newcommand{\tablespage}{%
-    \begin{spacing}{1.0}
-        \renewcommand{\listtablename}{DAFTAR TABEL}
-        \listoftables
-        \addcontentsline{toc}{chapter}{DAFTAR TABEL}
-    \end{spacing}
-}
-
-\newcommand{\referencepage}{%
-    \renewcommand\bibname{DAFTAR PUSTAKA}
-    \printbibliography%
-    \addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
-    }
-
-% >>>>> section <<<<< %
-% redefine section title
+% redefine section
 \titleformat{\section}[hang]{\normalfont\bfseries}{\normalfont\bfseries\thesection{} }{0pt}{}[]
 
-% >>>>> subsection <<<<< %
-% redefine subsection title
+% redefine subsection
 \titleformat{\subsection}[hang]{\normalfont\bfseries}{\normalfont\bfseries\thesubsection{} }{0pt}{}[]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -100,37 +79,24 @@
 % change subsection numbering
 \renewcommand\thesubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection} }
 
-%>>>>> equation <<<<<%
 % change equation numbering
 \renewcommand\theequation{\arabic{chapter}.\arabic{equation}}
 
-%>>>>> picture <<<<<%
 % change picture numbering
 \renewcommand\thefigure{\arabic{chapter}.\arabic{figure}}
 
-%>>>>> table <<<<<%
 % change table numbering
 \renewcommand\thetable{\arabic{chapter}.\arabic{table}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% => Caption                  %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% redefine caption
-\usepackage[labelfont=bf, labelsep=period, justification=centering]{caption}
-
-% redefine figure name
-\renewcommand{\figurename}{\textbf{GAMBAR}}
-
-% redefine table name
-\renewcommand{\tablename}{\textbf{tabel}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Spacing                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % indent first paragraph
 \RequirePackage{indentfirst}
+
 % for itemize and enumerate
 \RequirePackage{enumitem}
+
 % paragraph indent
 \setlength{\parindent}{15pt}
 
@@ -153,38 +119,29 @@
 \renewcommand{\arraystretch}{0.5}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% => Headers and Footers      %
+% => Caption                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage{fancyhdr}
+% redefine caption
+\usepackage[labelfont=bf, labelsep=period, justification=centering, figurename=GAMBAR]{caption}
 
-% >>>>> pagestyle <<<<< %
-\pagestyle{fancy}
-\fancyhead[L]{}
-\fancyhead[R]{\thepage}
-\fancyfoot[L]{}
-\fancyfoot[C]{}
-\renewcommand{\headrulewidth}{0pt}
-\setlength{\headheight}{15pt}
+% redefine figure name
+% \renewcommand{\figurename}{\textbf{GAMBAR}}
 
-% >>>>> page style for chapter (default is plain) <<<<< %
-\fancypagestyle{plain}{%
-    % ---> head <--- %
-    \renewcommand{\headrulewidth}{0pt}
-    \lhead{}
-    \chead{}
-    \rhead{}
+% redefine table name
+\renewcommand{\tablename}{\textbf{TABEL}}
 
-    % ---> foot <--- %
-    \renewcommand{\footrulewidth}{0pt}
-    \lfoot{}
-    \cfoot{\thepage}
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% => Equation Related         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Reference                %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\RequirePackage{hyperref}
+\RequirePackage{hyperref, letltxmacro}
 \usepackage[
     backend=biber,
     style=ieee,
@@ -195,6 +152,12 @@
 ]{biblatex}
 \addbibresource{part/backmatter/reference.bib}
 
+% redefine autoref figure name
+\renewcommand{\figureautorefname}{GAMBAR}
+
+% redefine autoref table name
+\renewcommand{\tableautorefname}{TABEL}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Graphics                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -203,14 +166,6 @@
 
 % define graphics directory
 \graphicspath{{pictures/}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% => Equation Related         %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{siunitx}
-\usepackage{amsmath}
-\usepackage{mathtools}
-\DeclarePairedDelimiter\abs{\lvert}{\rvert}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => New Command              %
@@ -239,6 +194,9 @@
     \end{center}
 }
 
+% newcommand for figure reference
+\newcommand{\figref}[1]{\textbf{\autoref{#1}}}
+
 % signature field for 1 signature in the right side of page
 \newcommand*{\sigrone}[2]{%
     \begin{flushright}
@@ -254,6 +212,36 @@
     \end{spacing}
     }
 
+\newcommand{\contentspage}{%
+    \begin{spacing}{1.0}
+        \renewcommand{\contentsname}{DAFTAR ISI}
+        \tableofcontents
+        \addcontentsline{toc}{chapter}{DAFTAR ISI}
+    \end{spacing}
+}
+
+\newcommand{\figurespage}{%
+    \begin{spacing}{1.0}
+        \renewcommand{\listfigurename}{DAFTAR GAMBAR}
+        \listoffigures
+        \addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+    \end{spacing}
+}
+
+\newcommand{\tablespage}{%
+    \begin{spacing}{1.0}
+        \renewcommand{\listtablename}{DAFTAR TABEL}
+        \listoftables
+        \addcontentsline{toc}{chapter}{DAFTAR TABEL}
+    \end{spacing}
+}
+
+\newcommand{\referencepage}{%
+    \renewcommand\bibname{DAFTAR PUSTAKA}
+    \printbibliography%
+    \addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
+    }
+
 \newcommand{\originalitypage}{%
     \begin{spacing}{2.0}
         \input{part/frontmatter/originality.tex}
@@ -261,7 +249,7 @@
     }
 
 \newcommand{\prefacepage}{%
-        \input{part/frontmatter/preface.tex}
+    \input{part/frontmatter/preface.tex}
     }
 
 \newcommand{\validationpage}{%
