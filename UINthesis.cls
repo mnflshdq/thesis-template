@@ -98,7 +98,7 @@
 \RequirePackage{enumitem}
 
 % paragraph indent
-\setlength{\parindent}{15pt}
+\setlength{\parindent}{1cm}
 
 % line spacing
 \renewcommand{\baselinestretch}{1.5}
@@ -172,6 +172,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % newcommand for figure reference
 \newcommand{\figref}[1]{\textbf{\autoref{#1}}}
+
+% newcommand for figure reference
+\newcommand{\tabref}[1]{\textbf{\autoref{#1}}}
 
 % signature field for 2 signature in the center of page
 \newcommand*{\sigctwo}[6]{%
