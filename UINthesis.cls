@@ -170,6 +170,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => New Command              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% newcommand for figure reference
+\newcommand{\figref}[1]{\textbf{\autoref{#1}}}
+
 % signature field for 2 signature in the center of page
 \newcommand*{\sigctwo}[6]{%
     \begin{center}
@@ -186,16 +189,16 @@
 }%
 
 % signature field for 1 signature in the center of page
-\newcommand*{\sigcone}[2]{%
+\newcommand*{\sigcone}[3]{%
     \begin{center}
         \par\noindent\makebox[5cm][c]{#1}\\
         \vspace{2.5cm}
-        \par\noindent\makebox[5cm][c]{#2}
+        \par\noindent\makebox[5cm][c]{\underline{#2}}
+        \begin{spacing}{0}
+            \par\noindent\makebox[5cm][c]{#3}
+        \end{spacing}
     \end{center}
 }
-
-% newcommand for figure reference
-\newcommand{\figref}[1]{\textbf{\autoref{#1}}}
 
 % signature field for 1 signature in the right side of page
 \newcommand*{\sigrone}[2]{%
