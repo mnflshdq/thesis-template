@@ -124,6 +124,8 @@
 % redefine caption
 \usepackage[labelfont=bf, labelsep=period, justification=centering, figurename=GAMBAR]{caption}
 
+\usepackage{subcaption}
+
 % redefine figure name
 % \renewcommand{\figurename}{\textbf{GAMBAR}}
 
@@ -264,10 +266,17 @@
     \end{spacing}
     }
 
-\newcommand{\abstractpage}{%
+\newcommand{\abstractpageid}{%
     \begin{spacing}{1.0}
         {\setlength{\parindent}{0cm}
         \input{part/frontmatter/abstract-id.tex}
+        }
+    \end{spacing}
+    }
+
+\newcommand{\abstractpageen}{%
+    \begin{spacing}{1.0}
+        {\setlength{\parindent}{0cm}
         \textit{\input{part/frontmatter/abstract-en.tex}}
         }
     \end{spacing}
