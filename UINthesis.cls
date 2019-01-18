@@ -141,7 +141,7 @@
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% => Reference                %
+% => Reference & Citing       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{hyperref, letltxmacro}
 \usepackage[
@@ -160,6 +160,11 @@
 % redefine autoref table name
 \renewcommand{\tableautorefname}{TABEL}
 
+% citing using cleveref
+\usepackage[nameinlink]{cleveref}
+\crefname{figure}{Fig.}{Fig.}
+\Crefname{figure}{Figure.}{Figure.}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Graphics                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -172,11 +177,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => New Command              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% newcommand for figure reference
-\newcommand{\figref}[1]{\textbf{\autoref{#1}}}
-
-% newcommand for figure reference
-\newcommand{\tabref}[1]{\textbf{\autoref{#1}}}
 
 % signature field for 2 signature in the center of page
 \newcommand*{\sigctwo}[6]{%
@@ -244,9 +244,8 @@
     \end{spacing}
 }
 
-\newcommand{\referencepage}{%
-    \renewcommand\bibname{DAFTAR PUSTAKA}
-    \printbibliography%
+\newcommand{\bibliographypage}{%
+    \printbibliography[title={DAFTAR PUSTAKA}]
     \addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
     }
 
