@@ -160,10 +160,13 @@
 % redefine autoref table name
 \renewcommand{\tableautorefname}{TABEL}
 
-% citing using cleveref
+% reference using cleveref
 \usepackage[nameinlink]{cleveref}
 \crefname{figure}{Fig.}{Fig.}
 \Crefname{figure}{Figure.}{Figure.}
+
+\crefname{table}{Tab.}{Tab.}
+\Crefname{table}{Tabel.}{Tabel.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Graphics                 %
