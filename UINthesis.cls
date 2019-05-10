@@ -168,6 +168,10 @@
 \crefname{table}{Tab.}{Tab.}
 \Crefname{table}{Tabel.}{Tabel.}
 
+\creflabelformat{equation}{#2#1#3}
+\crefname{equation}{Eq.}{Eq.}
+\Crefname{equation}{Equation.}{Equation.}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Graphics                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
