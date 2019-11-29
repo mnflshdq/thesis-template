@@ -25,10 +25,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Font and Character       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage{fontspec}
-
-% set Times New Roman as main font
-\setmainfont{Times New Roman}
+\usepackage{newtxtext, newtxmath}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Headers and Footers      %
