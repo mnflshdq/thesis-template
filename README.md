@@ -1,2 +1,3 @@
-# thesis-template
-LaTeX template for Physics Study Program, Faculty of Science and Technology UIN Jakarta's thesis
+# UIN Syarif Hidayatullah LaTeX Thesis Template
+compiled with
+> <code>latexmk -pdf -synctex=1 -file-line-error -shell-escape -interaction=nonstopmode main.tex</code>
