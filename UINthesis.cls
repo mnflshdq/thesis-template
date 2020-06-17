@@ -20,7 +20,7 @@
 % => Layout                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % define paper and margin
-\RequirePackage[a4paper, margin=3cm, top=4cm, left=4cm]{geometry}
+\usepackage[a4paper, margin=3cm, top=4cm, left=4cm]{geometry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Font and Character       %
@@ -30,7 +30,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Headers and Footers      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage{fancyhdr}
+\usepackage{fancyhdr}
 
 % >>>>> pagestyle <<<<< %
 \pagestyle{fancy}
@@ -49,13 +49,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Customize chapters, sections and subsections           %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage{titlesec}
+\usepackage{titlesec}
 
 % change chapter to BAB
 \renewcommand{\chaptername}{BAB}
 
 % redefine chapter
-\titleformat{\chapter}[display]{\centering\large\bfseries}{\normalfont\bfseries\chaptertitlename{} \thechapter}{0pt}{}[]
+\titleformat{\chapter}[display]{\centering\large\bfseries}{\large\bfseries\chaptertitlename{} \thechapter}{-10pt}{}[]
 
 % redefine section
 \titleformat{\section}[hang]{\normalfont\bfseries}{\normalfont\bfseries\thesection{} }{0pt}{}[]
@@ -89,13 +89,16 @@
 % => Spacing                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % indent first paragraph
-\RequirePackage{indentfirst}
+\usepackage{indentfirst}
 
 % for itemize and enumerate
-\RequirePackage{enumitem}
+\usepackage{enumitem}
 
 % paragraph indent
 \setlength{\parindent}{1cm}
+
+% tab
+\usepackage{tabto}
 
 % line spacing
 \renewcommand{\baselinestretch}{1.5}
@@ -110,7 +113,7 @@
 \titlespacing{\subsection}{0pt}{11pt}{11pt}
 
 % change paragraph in the midle of document
-\RequirePackage{setspace}
+\usepackage{setspace}
 
 % redefine table spacing
 \renewcommand{\arraystretch}{0.5}
@@ -140,7 +143,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Reference & Citing       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage{hyperref, letltxmacro}
+\usepackage[hidelinks]{hyperref}
+\usepackage{letltxmacro}
+
 \usepackage[
     backend=biber,
     style=ieee,
@@ -172,8 +177,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Graphics                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage{graphicx}
-\RequirePackage{float}
+\usepackage{graphicx}
+\usepackage{float}
 
 % define graphics directory
 \graphicspath{{pictures/}}
@@ -221,6 +226,7 @@
 \renewcommand{\titlepage}{%
     \begin{spacing}{1.0}
         \input{part/frontmatter/title.tex}
+        \addcontentsline{toc}{chapter}{LEMBAR JUDUL}
     \end{spacing}
     }
 
@@ -256,6 +262,7 @@
 \newcommand{\originalitypage}{%
     \begin{spacing}{2.0}
         \input{part/frontmatter/originality.tex}
+        \addcontentsline{toc}{chapter}{PERNYATAAN ORISINALITAS}
     \end{spacing}
     }
 
