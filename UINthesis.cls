@@ -94,6 +94,10 @@
 % for itemize and enumerate
 \usepackage{enumitem}
 
+% reduce list line spacing
+\setlist[enumerate]{itemsep=0mm}
+\setlist[itemize]{itemsep=0mm}
+
 % paragraph indent
 \setlength{\parindent}{1cm}
 
