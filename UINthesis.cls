@@ -61,7 +61,7 @@
 \titleformat{\section}[hang]{\normalfont\bfseries}{\normalfont\bfseries\thesection{} }{0pt}{}[]
 
 % redefine subsection
-\titleformat{\subsection}[hang]{\normalfont\bfseries}{\normalfont\bfseries\thesubsection{} }{0pt}{}[]
+\titleformat{\subsection}[hang]{\normalfont\normalsize}{\normalfont\normalsize\thesubsection{} }{0pt}{}[]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Numbering                %
