@@ -64,77 +64,27 @@
 \titleformat{\subsection}[hang]{\normalfont\normalsize}{\normalfont\normalsize\thesubsection{} }{0pt}{}[]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% => Numbering                %
+% => Listings                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% change chapter numbering from arabic to roman number
-\renewcommand{\thechapter}{\Roman{chapter}}
-
-% change section numbering
-\renewcommand\thesection{\arabic{chapter}.\arabic{section} }
-
-% change subsection numbering
-\renewcommand\thesubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection} }
-
-% change equation numbering
-\renewcommand\theequation{\arabic{chapter}.\arabic{equation}}
-
-% change picture numbering
-\renewcommand\thefigure{\arabic{chapter}.\arabic{figure}}
-
-% change table numbering
-\renewcommand\thetable{\arabic{chapter}.\arabic{table}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% => Spacing                  %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% indent first paragraph
-\usepackage{indentfirst}
-
-% for itemize and enumerate
-\usepackage{enumitem}
-
-% reduce list line spacing
-\setlist[enumerate]{itemsep=0mm}
-\setlist[itemize]{itemsep=0mm}
-
-% paragraph indent
-\setlength{\parindent}{1cm}
-
-% tab
-\usepackage{tabto}
-
-% line spacing
-\renewcommand{\baselinestretch}{1.5}
-
-% change chapter space to top margin
-\titlespacing*{\chapter}{0pt}{-2\baselineskip}{1em}
-
-% change section space
-\titlespacing{\section}{0pt}{12pt}{11pt}
-
-% change subsection space
-\titlespacing{\subsection}{0pt}{11pt}{11pt}
-
-% change paragraph in the midle of document
-\usepackage{setspace}
-
-% redefine table spacing
-\renewcommand{\arraystretch}{0.5}
+\usepackage{listings}
+\lstset{
+    basicstyle=\linespread{0.8}\ttfamily\footnotesize,
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Caption                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % redefine caption
-\usepackage[labelfont=bf, labelsep=period, justification=centering, figurename=GAMBAR]{caption}
+\usepackage[
+    labelfont=bf,
+    labelsep=period,
+    justification=centering,
+    figurename=GAMBAR,
+    tablename=TABEL]{caption}
 
 \usepackage{subcaption}
 
-% redefine figure name
-% \renewcommand{\figurename}{\textbf{GAMBAR}}
-
-% redefine table name
-\renewcommand{\tablename}{\textbf{TABEL}}
+\renewcommand\lstlistingname{CODE}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Equation Related         %
@@ -186,6 +136,70 @@
 
 % define graphics directory
 \graphicspath{{pictures/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% => Numbering                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% change chapter numbering from arabic to roman number
+\renewcommand\thechapter{\Roman{chapter}}
+
+% change section numbering
+\renewcommand\thesection{\arabic{chapter}.\arabic{section} }
+
+% change subsection numbering
+\renewcommand\thesubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection} }
+
+% change equation numbering
+\renewcommand\theequation{\arabic{chapter}.\arabic{equation}}
+
+% change picture numbering
+\renewcommand\thefigure{\arabic{chapter}.\arabic{figure}}
+
+% change table numbering
+\renewcommand\thetable{\arabic{chapter}.\arabic{table}}
+
+% change listing numbering
+\AtBeginDocument{
+     \renewcommand\thelstlisting{\arabic{chapter}.\arabic{section}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% => Spacing                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% indent first paragraph
+\usepackage{indentfirst}
+
+% for itemize and enumerate
+\usepackage{enumitem}
+
+% reduce list line spacing
+\setlist[enumerate]{itemsep=0mm}
+\setlist[itemize]{itemsep=0mm}
+
+% paragraph indent
+\setlength{\parindent}{1cm}
+
+% tab
+\usepackage{tabto}
+
+% line spacing
+\renewcommand{\baselinestretch}{1.5}
+
+% change chapter space to top margin
+\titlespacing*{\chapter}{0pt}{-2\baselineskip}{1em}
+
+% change section space
+\titlespacing{\section}{0pt}{12pt}{11pt}
+
+% change subsection space
+\titlespacing{\subsection}{0pt}{11pt}{11pt}
+
+% change paragraph in the midle of document
+\usepackage{setspace}
+
+% redefine table spacing
+\renewcommand{\arraystretch}{0.5}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => New Command              %
@@ -255,6 +269,14 @@
         \renewcommand{\listtablename}{DAFTAR TABEL}
         \listoftables
         \addcontentsline{toc}{chapter}{DAFTAR TABEL}
+    \end{spacing}
+}
+
+\newcommand{\listingpage}{%
+    \begin{spacing}{1.0}
+        \renewcommand{\lstlistlistingname}{DAFTAR CODE}
+        \lstlistoflistings%
+        \addcontentsline{toc}{chapter}{DAFTAR CODE}
     \end{spacing}
 }
 
