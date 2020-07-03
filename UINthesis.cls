@@ -67,8 +67,16 @@
 % => Listings                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{listings}
-\lstset{
+\lstset{%
     basicstyle=\linespread{0.8}\ttfamily\footnotesize,
+    extendedchars=true,
+    showspaces=false,
+    breaklines=true,
+    showtabs=false,
+}
+\lstdefinestyle{box}{%
+    frame=shadowbox,
+    numbers=left
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -131,6 +139,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Graphics                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color}
 \usepackage{graphicx}
 \usepackage{float}
 
