@@ -84,6 +84,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % redefine caption
 \usepackage[
+    belowskip=-10pt,
     labelfont=bf,
     labelsep=period,
     justification=centering,
@@ -92,7 +93,7 @@
 
 \usepackage{subcaption}
 
-\renewcommand\lstlistingname{CODE}
+\renewcommand\lstlistingname{LISTING}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Equation Related         %
@@ -132,6 +133,9 @@
 \crefname{table}{Tab.}{Tab.}
 \Crefname{table}{Tabel.}{Tabel.}
 
+\crefname{listing}{List.}{List.}
+\Crefname{listing}{Listing.}{Listing.}
+
 \creflabelformat{equation}{#2#1#3}
 \crefname{equation}{Eq.}{Eq.}
 \Crefname{equation}{Equation.}{Equation.}
@@ -170,7 +174,7 @@
 
 % change listing numbering
 \AtBeginDocument{
-     \renewcommand\thelstlisting{\arabic{chapter}.\arabic{section}}
+     \renewcommand\thelstlisting{\arabic{chapter}.\arabic{lstlisting}}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -283,9 +287,9 @@
 
 \newcommand{\listingpage}{%
     \begin{spacing}{1.0}
-        \renewcommand{\lstlistlistingname}{DAFTAR CODE}
+        \renewcommand{\lstlistlistingname}{DAFTAR LISTING}
         \lstlistoflistings%
-        \addcontentsline{toc}{chapter}{DAFTAR CODE}
+        \addcontentsline{toc}{chapter}{DAFTAR LISTING}
     \end{spacing}
 }
 
