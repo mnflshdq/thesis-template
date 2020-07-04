@@ -73,6 +73,7 @@
     showspaces=false,
     breaklines=true,
     showtabs=false,
+    escapeinside={(*}{*)}
 }
 \lstdefinestyle{box}{%
     frame=shadowbox,
