@@ -76,7 +76,7 @@
 }
 \lstdefinestyle{box}{%
     frame=shadowbox,
-    numbers=left
+    numbers=left,
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -112,7 +112,7 @@
 \usepackage[
     backend=biber,
     style=ieee,
-    sorting=ynt,
+    sorting=nty,
     isbn=true,
     url=true,
     doi=true
