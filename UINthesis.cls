@@ -16,6 +16,10 @@
 \ProvidesClass{UINthesis}[23/09/2018 UIN Jakarta Thesis Template]
 \LoadClass[12pt, oneside, a4paper]{book}
 
+
+\usepackage{etoolbox}
+\usepackage[utf8]{inputenc}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Layout                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -64,20 +68,48 @@
 \titleformat{\subsection}[hang]{\normalfont\normalsize}{\normalfont\normalsize\thesubsection{} }{0pt}{}[]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% => Graphics                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{float}
+
+% define graphics directory
+\graphicspath{{pictures/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Listings                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{listings}
+
+% add spacing per chapter in list of listing
+\makeatletter
+\patchcmd{\@chapter}% <cmd>
+  {\addtocontents}% <search>
+  {\addtocontents{lol}{\protect\addvspace{10\p@}}% Add per-chapter space in LoL
+   \addtocontents}% <replace>
+  {}{}% <success><failure>
+\makeatother
+
 \lstset{%
     basicstyle=\linespread{0.8}\ttfamily\footnotesize,
     extendedchars=true,
     showspaces=false,
+    showstringspaces=false,
     breaklines=true,
     showtabs=false,
     escapeinside={(*}{*)}
 }
+
 \lstdefinestyle{box}{%
+    tabsize=4,
     frame=shadowbox,
     numbers=left,
+}
+
+\lstdefinestyle{command}{%
+    language=bash,
+    frame=lines,
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -85,14 +117,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % redefine caption
 \usepackage[
-    belowskip=-10pt,
+    belowskip=0pt,
     labelfont=bf,
     labelsep=period,
     justification=centering,
     figurename=GAMBAR,
     tablename=TABEL]{caption}
 
-\usepackage{subcaption}
+\usepackage[list=true, listformat=simple]{subcaption}
 
 \renewcommand\lstlistingname{LISTING}
 
@@ -140,16 +172,6 @@
 \creflabelformat{equation}{#2#1#3}
 \crefname{equation}{Eq.}{Eq.}
 \Crefname{equation}{Equation.}{Equation.}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% => Graphics                 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{color}
-\usepackage{graphicx}
-\usepackage{float}
-
-% define graphics directory
-\graphicspath{{pictures/}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % => Numbering                %
