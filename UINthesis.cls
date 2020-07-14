@@ -105,6 +105,7 @@
     tabsize=4,
     frame=shadowbox,
     numbers=left,
+    numberstyle=\footnotesize,
 }
 
 \lstdefinestyle{command}{%
